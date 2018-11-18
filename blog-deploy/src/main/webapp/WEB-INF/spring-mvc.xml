@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+    <mvc:default-servlet-handler/>
+
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
+
+    <context:component-scan base-package="com.github.raphael008">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <mvc:annotation-driven />
+
+    <!-- 处理：not acceptable according to the request "accept" -->
+    <!--<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">-->
+        <!--&lt;!&ndash; restful 是否采用扩展名的方式确定内容格式，id.json 返回JSON格式 &ndash;&gt;-->
+        <!--<property name="favorPathExtension" value="false"/>-->
+        <!--&lt;!&ndash; restful 是否采用参数支持确定内容格式，id?format=json 返回JSON格式 &ndash;&gt;-->
+        <!--<property name="favorParameter" value="false"/>-->
+        <!--&lt;!&ndash; restful 是否忽略掉accept header，Accept:application/json &ndash;&gt;-->
+        <!--<property name="ignoreAcceptHeader" value="false"/>-->
+    <!--</bean>-->
+
+    <bean name="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+    </bean>
+
+    <!--<bean id="fastJsonConfig" class="com.alibaba.fastjson.support.config.FastJsonConfig">-->
+        <!--<property name="serializerFeatures" >-->
+            <!--<array>-->
+                <!--<value>WriteMapNullValue</value>-->
+                <!--<value>WriteNullStringAsEmpty</value>-->
+                <!--<value>WriteNullListAsEmpty</value>-->
+                <!--<value>WriteNullNumberAsZero</value>-->
+                <!--<value>WriteNullBooleanAsFalse</value>-->
+                <!--<value>WriteDateUseDateFormat</value>-->
+            <!--</array>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager">-->
+        <!--<mvc:message-converters register-defaults="true">-->
+            <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
+                <!--<constructor-arg index="0">-->
+                    <!--<bean class="java.nio.charset.Charset" factory-method="forName">-->
+                        <!--<constructor-arg value="utf-8"/>-->
+                    <!--</bean>-->
+                <!--</constructor-arg>-->
+            <!--</bean>-->
+            <!--<bean class="com.tilchina.framework.support.FastJsonHttpMessageConverterEx">-->
+                <!--<property name="supportedMediaTypes">-->
+                    <!--<list>-->
+                        <!--<value>text/html;charset=UTF-8</value>-->
+                        <!--<value>application/json;charset=UTF-8</value>-->
+                    <!--</list>-->
+                <!--</property>-->
+                <!--<property name="fastJsonConfig" ref="fastJsonConfig"/>-->
+            <!--</bean>-->
+        <!--</mvc:message-converters>-->
+        <!--<mvc:argument-resolvers>-->
+            <!--<bean class="com.tilchina.framework.support.FastJsonParameterMethodArgumentResolver"></bean>-->
+        <!--</mvc:argument-resolvers>-->
+    <!--</mvc:annotation-driven>-->
+
+    <!-- enable autowire -->
+    <context:annotation-config/>
+
+    <!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 -->
+    <!--<mvc:interceptors>-->
+        <!--<bean id="localeRecognitionInterceptor" class="com.tilchina.timp.common.LocaleRecognitionInterceptor">-->
+            <!--<property name="paramName" value="l" />-->
+        <!--</bean>-->
+    <!--</mvc:interceptors>-->
+</beans>
