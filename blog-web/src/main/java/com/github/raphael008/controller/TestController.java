@@ -1,8 +1,6 @@
 package com.github.raphael008.controller;
 
-import com.github.raphael008.mapper.UserMapper;
 import com.github.raphael008.model.Test;
-import com.github.raphael008.model.User;
 import com.github.raphael008.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

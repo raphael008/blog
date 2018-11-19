@@ -1,11 +1,26 @@
 package com.github.raphael008.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.github.raphael008.enums.BlockStatus;
+import com.github.raphael008.enums.Gender;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class User {
-    Long userId;
-    String userName;
+    private Long userId;
+
+    private String userName;
+
+    private String userNickname;
+
+    private String userEmail;
+
+    private Byte userAge;
+
+    private String userAvatar;
+
+    private Gender userGender;
+
+    private Long creatorId;
+
+    private BlockStatus blocked;
 }
