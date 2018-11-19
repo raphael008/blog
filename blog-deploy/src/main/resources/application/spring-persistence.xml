@@ -48,7 +48,7 @@
     </bean>
 
     <!--<bean id="druid-stat-interceptor"-->
-          <!--class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor"/>-->
+    <!--class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor"/>-->
 
     <tx:annotation-driven/>
 
@@ -62,43 +62,48 @@
     <!--<bean id="sqlStatementInterceptor" class="com.tilchina.mybatis.interceptor.SqlStatementInterceptor"/>-->
 
     <!--<bean id="pagehelperInterceptor" class="com.github.pagehelper.PageInterceptor">-->
-        <!--&lt;!&ndash; 这里的几个配置主要演示如何使用，如果不理解，一定要去掉下面的配置 &ndash;&gt;-->
-        <!--<property name="properties">-->
-            <!--<value>-->
-                <!--helperDialect=mysql-->
-                <!--params=count=countSql-->
-                <!--autoRuntimeDialect=true-->
-                <!--rowBoundsWithCount=true-->
-                <!--reasonable=false-->
-            <!--</value>-->
-        <!--</property>-->
+    <!--&lt;!&ndash; 这里的几个配置主要演示如何使用，如果不理解，一定要去掉下面的配置 &ndash;&gt;-->
+    <!--<property name="properties">-->
+    <!--<value>-->
+    <!--helperDialect=mysql-->
+    <!--params=count=countSql-->
+    <!--autoRuntimeDialect=true-->
+    <!--rowBoundsWithCount=true-->
+    <!--reasonable=false-->
+    <!--</value>-->
+    <!--</property>-->
     <!--</bean>-->
-            <!---->
+    <!---->
     <!--<bean id="sqlSessionFactory" class="com.tilchina.mybatis.SqlSessionFactoryBeanExtension">-->
-        <!--<property name="dataSource" ref="dataSource"/>-->
-        <!--<property name="configLocation" value="classpath:sqlMapConfig.xml"/>-->
-        <!--<property name="mapperLocations" value="classpath:com/tilchina/timp/mapper/*Mapper.xml"/>-->
-        <!--<property name="plugins">-->
-            <!--<array>  -->
-                <!--<ref bean="pagehelperInterceptor" />-->
-                <!--<ref bean="sqlStatementInterceptor"/>-->
-            <!--</array>  -->
-        <!--</property>-->
+    <!--<property name="dataSource" ref="dataSource"/>-->
+    <!--<property name="configLocation" value="classpath:sqlMapConfig.xml"/>-->
+    <!--<property name="mapperLocations" value="classpath:com/tilchina/timp/mapper/*Mapper.xml"/>-->
+    <!--<property name="plugins">-->
+    <!--<array>  -->
+    <!--<ref bean="pagehelperInterceptor" />-->
+    <!--<ref bean="sqlStatementInterceptor"/>-->
+    <!--</array>  -->
+    <!--</property>-->
     <!--</bean>-->
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:com/github/raphael008/mapper/*Mapper.xml"/>
+    </bean>
 
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <property name="basePackage" value="com.tilchina.timp.mapper"/>
+        <property name="basePackage" value="com.github.raphael008.mapper"/>
     </bean>
 
     <task:annotation-driven/>
 
-    <context:component-scan base-package="com.github.raphael008">
+    <context:component-scan base-package="com.github.raphael008.service">
         <context:include-filter type="annotation"
                                 expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
 
-    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" >
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
         <property name="cookieName" value="l"/>
     </bean>
 
