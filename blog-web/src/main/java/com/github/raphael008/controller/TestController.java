@@ -16,21 +16,11 @@ public class TestController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserMapper userMapper;
-
     @GetMapping("hello")
     public Test test() {
         Test test = new Test();
         test.setUsername("raphael008");
         test.setPassword("abc1234");
         return test;
-    }
-
-    @GetMapping("user")
-    private List<User> user() {
-//        List<User> users = userMapper.select();
-        List<User> users = userService.getAllUsers();
-        return users;
     }
 }

@@ -15,7 +15,8 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public List<User> getAllUsers() {
-        return null;
+    public User queryByUserId(Long userId) {
+        User user = userMapper.selectByPrimaryKey(userId);
+        return user;
     }
 }
