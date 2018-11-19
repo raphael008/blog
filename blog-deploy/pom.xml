@@ -16,6 +16,11 @@
     <dependencies>
         <dependency>
             <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-dal</artifactId>
+            <version>${blog.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.raphael008</groupId>
             <artifactId>blog-manager</artifactId>
             <version>${blog.version}</version>
         </dependency>
@@ -76,9 +81,18 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>slf4j-simple</artifactId>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
 
         <dependency>

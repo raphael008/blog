@@ -13,6 +13,17 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-dal</artifactId>
+            <version>${blog.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-model</artifactId>
+            <version>${blog.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
