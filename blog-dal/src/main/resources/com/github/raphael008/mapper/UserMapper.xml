@@ -10,11 +10,11 @@
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="user_nickname" jdbcType="VARCHAR" property="userNickname" />
     <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
-    <result column="user_age" jdbcType="TINYINT" property="userAge" />
+    <result column="user_age" jdbcType="INTEGER" property="userAge" />
     <result column="user_avatar" jdbcType="VARCHAR" property="userAvatar" />
     <result column="user_gender" jdbcType="OTHER" property="userGender" />
     <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
-    <result column="blocked" jdbcType="OTHER" property="blocked" />
+    <result column="blocked" jdbcType="INTEGER" property="blocked" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--
@@ -51,8 +51,8 @@
       user_age, user_avatar, user_gender, 
       creator_id, blocked)
     values (#{userName,jdbcType=VARCHAR}, #{userNickname,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
-      #{userAge,jdbcType=TINYINT}, #{userAvatar,jdbcType=VARCHAR}, #{userGender,jdbcType=OTHER}, 
-      #{creatorId,jdbcType=BIGINT}, #{blocked,jdbcType=OTHER})
+      #{userAge,jdbcType=INTEGER}, #{userAvatar,jdbcType=VARCHAR}, #{userGender,jdbcType=OTHER}, 
+      #{creatorId,jdbcType=BIGINT}, #{blocked,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="com.github.raphael008.model.User" useGeneratedKeys="true">
     <!--
@@ -97,7 +97,7 @@
         #{userEmail,jdbcType=VARCHAR},
       </if>
       <if test="userAge != null">
-        #{userAge,jdbcType=TINYINT},
+        #{userAge,jdbcType=INTEGER},
       </if>
       <if test="userAvatar != null">
         #{userAvatar,jdbcType=VARCHAR},
@@ -109,7 +109,7 @@
         #{creatorId,jdbcType=BIGINT},
       </if>
       <if test="blocked != null">
-        #{blocked,jdbcType=OTHER},
+        #{blocked,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -130,7 +130,7 @@
         user_email = #{userEmail,jdbcType=VARCHAR},
       </if>
       <if test="userAge != null">
-        user_age = #{userAge,jdbcType=TINYINT},
+        user_age = #{userAge,jdbcType=INTEGER},
       </if>
       <if test="userAvatar != null">
         user_avatar = #{userAvatar,jdbcType=VARCHAR},
@@ -142,7 +142,7 @@
         creator_id = #{creatorId,jdbcType=BIGINT},
       </if>
       <if test="blocked != null">
-        blocked = #{blocked,jdbcType=OTHER},
+        blocked = #{blocked,jdbcType=INTEGER},
       </if>
     </set>
     where user_id = #{userId,jdbcType=BIGINT}
@@ -156,11 +156,11 @@
     set user_name = #{userName,jdbcType=VARCHAR},
       user_nickname = #{userNickname,jdbcType=VARCHAR},
       user_email = #{userEmail,jdbcType=VARCHAR},
-      user_age = #{userAge,jdbcType=TINYINT},
+      user_age = #{userAge,jdbcType=INTEGER},
       user_avatar = #{userAvatar,jdbcType=VARCHAR},
       user_gender = #{userGender,jdbcType=OTHER},
       creator_id = #{creatorId,jdbcType=BIGINT},
-      blocked = #{blocked,jdbcType=OTHER}
+      blocked = #{blocked,jdbcType=INTEGER}
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
 </mapper>

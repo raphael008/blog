@@ -1,9 +1,10 @@
 package com.github.raphael008.model;
 
-import com.github.raphael008.enums.BlockStatus;
-import com.github.raphael008.enums.Gender;
 import lombok.Data;
 
+/**
+* Created by Mybatis Generator 2018/11/20
+*/
 @Data
 public class User {
     private Long userId;
@@ -14,13 +15,13 @@ public class User {
 
     private String userEmail;
 
-    private Byte userAge;
+    private Integer userAge;
 
     private String userAvatar;
 
-    private Gender userGender;
+    private Object userGender;
 
     private Long creatorId;
 
-    private BlockStatus blocked;
+    private Integer blocked;
 }
