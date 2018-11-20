@@ -7,8 +7,6 @@ import com.github.raphael008.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(value = "/test", produces = "application/json")
 public class TestController {

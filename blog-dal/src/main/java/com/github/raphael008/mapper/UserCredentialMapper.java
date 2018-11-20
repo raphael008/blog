@@ -1,20 +1,11 @@
 package com.github.raphael008.mapper;
 
-import com.github.raphael008.model.UserCredential;
+import com.github.raphael008.model.UserCredential;import org.apache.ibatis.annotations.Param;
 
 /**
 * Created by Mybatis Generator 2018/11/20
 */
-public interface UserCredentialMapper {
-    int deleteByPrimaryKey(Long credentialId);
+public interface UserCredentialMapper extends BaseMapper<UserCredential> {
 
-    int insert(UserCredential record);
-
-    int insertSelective(UserCredential record);
-
-    UserCredential selectByPrimaryKey(Long credentialId);
-
-    int updateByPrimaryKeySelective(UserCredential record);
-
-    int updateByPrimaryKey(UserCredential record);
+    UserCredential selectByUserId(@Param("userId")Long userId);
 }

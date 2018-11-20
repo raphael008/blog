@@ -15,12 +15,14 @@
         <dependency>
             <groupId>com.github.raphael008</groupId>
             <artifactId>blog-model</artifactId>
-            <version>${blog.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-manager</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.raphael008</groupId>
             <artifactId>blog-service</artifactId>
-            <version>${blog.version}</version>
         </dependency>
 
         <dependency>

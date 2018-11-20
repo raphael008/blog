@@ -178,4 +178,12 @@
         <include refid="Base_Column_List"/>
         from bd_user
     </select>
+
+    <select id="selectByUserName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from bd_user
+        where user_name = #{userName}
+        and deleted = 0
+    </select>
 </mapper>
