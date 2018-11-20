@@ -19,7 +19,7 @@ public class User {
 
     private String userAvatar;
 
-    private Object userGender;
+    private Integer userGender;
 
     private Long creatorId;
 
