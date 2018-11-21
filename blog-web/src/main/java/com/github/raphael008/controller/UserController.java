@@ -1,5 +1,6 @@
 package com.github.raphael008.controller;
 
+import com.github.raphael008.auth.Auth;
 import com.github.raphael008.model.User;
 import com.github.raphael008.service.UserService;
 import com.github.raphael008.user.manager.UserManager;
@@ -36,6 +37,7 @@ public class UserController {
     }
 
     @PostMapping("addUser")
+    @Auth
     public Map addUser(@RequestBody UserVO vo) {
         Map<String, String> result = userManager.addUser(vo);
         return result;

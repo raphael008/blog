@@ -19,9 +19,9 @@ public class WebController {
     private LoginManager loginManager;
 
     @PostMapping("login")
-    public User login(@RequestBody HttpServletRequest request, Map<String, String> params) {
+    public User login(HttpServletRequest request, @RequestBody Map<String, String> params) {
         try {
-            User user = loginManager.login(params.get("userName"), params.get("password"));
+            User user = loginManager.login(request, params.get("userName"), params.get("password"));
             return user;
         } catch (Exception e) {
             throw new RuntimeException("登录失败。");

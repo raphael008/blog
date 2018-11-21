@@ -22,9 +22,6 @@ import java.util.Map;
 public class UserManagerImpl implements UserManager {
 
     @Autowired
-    private HttpSession httpSession;
-
-    @Autowired
     private UserService userService;
 
     @Autowired
