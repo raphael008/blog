@@ -14,6 +14,10 @@
     <dependencies>
         <dependency>
             <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.raphael008</groupId>
             <artifactId>blog-model</artifactId>
         </dependency>
         <dependency>
@@ -62,5 +66,10 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

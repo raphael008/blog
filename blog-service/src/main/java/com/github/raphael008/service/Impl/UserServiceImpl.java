@@ -32,4 +32,10 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         User user = userMapper.selectByUserName(userName);
         return user;
     }
+
+    @Override
+    public String queryUserSaltByUserId(Long userId) {
+        String userSalt = userMapper.selectUserSaltByUserId(userId);
+        return userSalt;
+    }
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
@@ -18,12 +19,12 @@ public class WebController {
     private LoginManager loginManager;
 
     @PostMapping("login")
-    public User login(@RequestBody Map<String, String> params) {
+    public User login(@RequestBody HttpServletRequest request, Map<String, String> params) {
         try {
             User user = loginManager.login(params.get("userName"), params.get("password"));
             return user;
         } catch (Exception e) {
-            throw new RuntimeException("登陆失败。");
+            throw new RuntimeException("登录失败。");
         }
     }
 }

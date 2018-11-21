@@ -19,8 +19,6 @@ public class TestController {
         Test test = new Test();
         test.setUsername("raphael008");
         test.setPassword("123456");
-        test.setGender(Gender.MALE);
-        test.setBlockStatus(BlockStatus.NO);
         return test;
     }
 

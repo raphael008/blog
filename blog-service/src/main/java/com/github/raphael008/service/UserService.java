@@ -9,4 +9,6 @@ public interface UserService extends BaseService<User> {
     User queryByUserId(Long userId);
 
     User queryByUserName(String userName);
+
+    String queryUserSaltByUserId(Long userId);
 }

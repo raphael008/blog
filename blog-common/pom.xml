@@ -13,6 +13,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-model</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
@@ -67,5 +71,9 @@
             <artifactId>mybatis-generator-core</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 </project>
