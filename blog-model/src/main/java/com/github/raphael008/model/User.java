@@ -11,8 +11,6 @@ public class User {
 
     private String userName;
 
-    private String password;
-
     private String userNickname;
 
     private String userEmail;
@@ -22,6 +20,8 @@ public class User {
     private String userAvatar;
 
     private Integer userGender;
+
+    private String userSalt;
 
     private Long creatorId;
 
