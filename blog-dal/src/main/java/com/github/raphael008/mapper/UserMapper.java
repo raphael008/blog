@@ -8,4 +8,6 @@ import com.github.raphael008.model.User;import org.apache.ibatis.annotations.Par
 public interface UserMapper extends BaseMapper<User> {
 
     User selectByUserName(@Param("userName") String userName);
+
+    String selectUserSaltByUserId(@Param("userId") Long userId);
 }
