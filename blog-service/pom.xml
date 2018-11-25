@@ -13,6 +13,15 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-dal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-model</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
@@ -48,5 +57,10 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

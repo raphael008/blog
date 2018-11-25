@@ -1,15 +1,29 @@
 package com.github.raphael008.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.raphael008.enums.BlockStatus;
+import com.github.raphael008.enums.Gender;
+import com.github.raphael008.model.Test;
+import com.github.raphael008.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/test", produces = "application/json")
 public class TestController {
 
-    @GetMapping("hello")
-    public String test() {
-        return "Hello, world";
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("test")
+    private Test test() {
+        Test test = new Test();
+        test.setUsername("raphael008");
+        test.setPassword("123456");
+        return test;
+    }
+
+    @PostMapping("deserialize")
+    public void deserialize(@RequestBody Test test) {
+        System.out.println();
     }
 }

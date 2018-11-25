@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <property name="logging.root" value="${p.logging.root}"/>
+    <property name="default.level" value="${p.logging.default.level}"/>
+    <property name="app.name" value="${p.app.name}"/>
+
+    <!-- 控制台输出 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="UTF-8">
+            <pattern>%date [%-5level] [%thread] %logger{80} - %msg%X{traceId}%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.github" additivity="false" level="${default.level}">
+        <appender-ref ref="stdout"/>
+    </logger>
+
+    <logger name="com.github.raphael008.mapper" additivity="false" level="INFO">
+        <appender-ref ref="stdout"/>
+    </logger>
+
+    <logger name="org.mybatis" additivity="false" level="INFO">
+        <appender-ref ref="stdout"/>
+    </logger>
+
+    <logger name="org.apache.ibatis" additivity="false" level="INFO">
+        <appender-ref ref="stdout"/>
+    </logger>
+
+    <logger name="org.mybatis.spring.SqlSessionFactoryBean" additivity="false" level="INFO">
+        <appender-ref ref="stdout"/>
+    </logger>
+
+    <logger name="org.springframework" additivity="false" level="INFO">
+        <appender-ref ref="stdout"/>
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="stdout"/>
+    </root>
+
+</configuration>

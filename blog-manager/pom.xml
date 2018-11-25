@@ -13,6 +13,19 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.raphael008</groupId>
+            <artifactId>blog-service</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
@@ -48,5 +61,19 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
