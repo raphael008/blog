@@ -13,8 +13,6 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.xml.bind.DatatypeConverter;
-import java.security.MessageDigest;
 import java.util.Objects;
 
 @Service
