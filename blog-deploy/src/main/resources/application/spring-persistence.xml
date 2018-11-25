@@ -1,0 +1,106 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:tx="http://www.springframework.org/schema/tx"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns:context="http://www.springframework.org/schema/context"-->
+       <!--xmlns:aop="http://www.springframework.org/schema/aop"-->
+       <!--xmlns:task="http://www.springframework.org/schema/task"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+   		<!--http://www.springframework.org/schema/beans/spring-beans.xsd-->
+   		<!--http://www.springframework.org/schema/context-->
+    	<!--http://www.springframework.org/schema/context/spring-context.xsd-->
+        <!--http://www.springframework.org/schema/tx   -->
+        <!--http://www.springframework.org/schema/tx/spring-tx-3.0.xsd-->
+        <!--http://www.springframework.org/schema/aop-->
+    	<!--http://www.springframework.org/schema/aop/spring-aop.xsd-->
+    	<!--http://www.springframework.org/schema/task-->
+    	<!--http://www.springframework.org/schema/task/spring-task.xsd">-->
+
+    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"-->
+          <!--init-method="init" destroy-method="close">-->
+        <!--<property name="url" value="${database.url}"/>-->
+        <!--<property name="username" value="${database.username}"/>-->
+        <!--&lt;!&ndash;<property name="password" ref="database.password"/>&ndash;&gt;-->
+        <!--<property name="password" value="${database.password}"/>-->
+        <!--<property name="filters" value="stat,slf4j,mergeStat"/>-->
+        <!--<property name="maxActive" value="${database.maxActive}"/>-->
+        <!--<property name="initialSize" value="${database.initialSize}"/>-->
+        <!--<property name="maxWait" value="${database.maxWait}"/>-->
+        <!--<property name="minIdle" value="${database.minIdle}"/>-->
+        <!--<property name="timeBetweenEvictionRunsMillis" value="${database.timeBetweenEvictionRunsMillis}"/>-->
+        <!--<property name="minEvictableIdleTimeMillis" value="${database.minEvictableIdleTimeMillis}"/>-->
+
+        <!--<property name="validationQuery" value="SELECT 1 FROM DUAL"/>-->
+        <!--<property name="testWhileIdle" value="true"/>-->
+        <!--<property name="testOnBorrow" value="false"/>-->
+        <!--<property name="testOnReturn" value="false"/>-->
+        <!--<property name="defaultAutoCommit" value="false"/>-->
+        <!--<property name="connectionProperties" value="druid.stat.slowSqlMillis=5000"/>-->
+        <!--<property name="maxOpenPreparedStatements" value="100"/>-->
+        <!--<property name="poolPreparedStatements" value="true"/>-->
+        <!--<property name="maxPoolPreparedStatementPerConnectionSize" value="100"/>-->
+    <!--</bean>-->
+    <!---->
+    <!--<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">-->
+        <!--<property name="mergeSql" value="true"/>-->
+        <!--<property name="slowSqlMillis" value="10000"/>-->
+        <!--<property name="logSlowSql" value="true"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="druid-stat-interceptor"-->
+          <!--class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor"/>-->
+
+    <!--<tx:annotation-driven/>-->
+
+    <!--<bean class="com.tilchina.catalyst.spring.PropertiesUtils"/>-->
+
+    <!--<bean id="transactionManager"-->
+          <!--class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="sqlStatementInterceptor"-->
+          <!--class="com.tilchina.mybatis.interceptor.SqlStatementInterceptor"/>-->
+
+    <!--<bean id="pagehelperInterceptor" class="com.github.pagehelper.PageInterceptor">-->
+        <!--&lt;!&ndash; 这里的几个配置主要演示如何使用，如果不理解，一定要去掉下面的配置 &ndash;&gt;-->
+        <!--<property name="properties">-->
+            <!--<value>-->
+                <!--helperDialect=mysql-->
+                <!--params=count=countSql-->
+                <!--autoRuntimeDialect=true-->
+                <!--rowBoundsWithCount=true-->
+                <!--reasonable=false-->
+            <!--</value>-->
+        <!--</property>-->
+    <!--</bean>-->
+            <!---->
+    <!--<bean id="sqlSessionFactory" class="com.tilchina.mybatis.SqlSessionFactoryBeanExtension">-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+        <!--<property name="configLocation" value="classpath:sqlMapConfig.xml"/>-->
+        <!--<property name="mapperLocations" value="classpath:com/tilchina/timp/mapper/*Mapper.xml"/>-->
+        <!--<property name="plugins">-->
+            <!--<array>  -->
+                <!--<ref bean="pagehelperInterceptor" />-->
+                <!--<ref bean="sqlStatementInterceptor"/>-->
+            <!--</array>  -->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+        <!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>-->
+        <!--<property name="basePackage" value="com.tilchina.timp.mapper"/>-->
+    <!--</bean>-->
+
+    <!--<task:annotation-driven/>-->
+
+    <!--<context:component-scan base-package="com.tilchina">-->
+        <!--<context:include-filter type="annotation"-->
+                                <!--expression="org.springframework.stereotype.Service"/>-->
+    <!--</context:component-scan>-->
+
+    <!--<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" >-->
+        <!--<property name="cookieName" value="l"/>-->
+    <!--</bean>-->
+
+<!--</beans>-->
