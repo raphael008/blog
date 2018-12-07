@@ -1,6 +1,7 @@
 package com.github.raphael008.controller;
 
 import com.github.raphael008.auth.Auth;
+import com.github.raphael008.auth.CustomHttpSessionStrategy;
 import com.github.raphael008.model.User;
 import com.github.raphael008.service.UserService;
 import com.github.raphael008.user.manager.UserManager;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -41,5 +43,14 @@ public class UserController {
     public Map addUser(@RequestBody UserVO vo) {
         Map<String, String> result = userManager.addUser(vo);
         return result;
+    }
+
+    @PostMapping("test")
+    @Auth
+    public String test(HttpServletRequest request) {
+        CustomHttpSessionStrategy customHttpSessionStrategy = new CustomHttpSessionStrategy();
+        String requestedSessionId = customHttpSessionStrategy.getRequestedSessionId(request);
+
+        return "result:" + requestedSessionId;
     }
 }

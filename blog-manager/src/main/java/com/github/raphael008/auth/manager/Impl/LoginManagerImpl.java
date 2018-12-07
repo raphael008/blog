@@ -38,6 +38,7 @@ public class LoginManagerImpl implements LoginManager {
             environment.setUser(user);
 
             HttpSession session = request.getSession();
+            session.setAttribute("userId", user.getUserId());
             session.setAttribute("environment", environment);
             return user;
         } else {

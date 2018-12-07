@@ -36,7 +36,6 @@ public class WebController {
     @PostMapping("session")
     public void session() {
         Map test = sessionRepository.findByIndexNameAndIndexValue(FindByIndexNameSessionRepository.PRINCIPAL_NAME_INDEX_NAME, "test");
-        Session a = sessionRepository.findById("a");
         System.out.println();
     }
 }

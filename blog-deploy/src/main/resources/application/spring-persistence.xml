@@ -10,12 +10,11 @@
     	http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx   
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-
-
     	http://www.springframework.org/schema/task
     	http://www.springframework.org/schema/task/spring-task.xsd">
 
     <context:annotation-config/>
+
     <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
     <bean class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory"
           p:host-name="${redis.host}"
